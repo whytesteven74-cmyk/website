@@ -1,6 +1,7 @@
 import { Bike, Heart, MapPin, Users, TrendingUp, Mail, Video, Smartphone, DollarSign, MessageCircle, Share2, Play } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import NavSpy from '@/components/NavSpy';
+import TikTokFeed from '@/components/social/TikTokFeed';
 
 export default function Home() {
   return (
@@ -228,11 +229,15 @@ export default function Home() {
           <div className="text-center">
             <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 rounded-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-200">
               <Users className="w-5 h-5" />
-              Join the Waitlist
+              Get Early Access
             </a>
           </div>
         </div>
       </section>
+
+      {/* TikTok Feed Section */}
+      <TikTokFeed />
+
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">

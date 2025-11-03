@@ -2,6 +2,9 @@ import { Bike, Heart, MapPin, Users, TrendingUp, Mail, Video, Smartphone, Dollar
 import ContactForm from '@/components/ContactForm';
 import NavSpy from '@/components/NavSpy';
 import TikTokFeed from '@/components/social/TikTokFeed';
+import SocialStats from '@/components/social/SocialStats';
+import InstagramGallery from '@/components/social/InstagramGallery';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
@@ -65,6 +68,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Social Stats Section */}
+      <SocialStats />
 
       {/* About Section */}
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -237,6 +243,9 @@ export default function Home() {
 
       {/* TikTok Feed Section */}
       <TikTokFeed />
+
+      {/* Instagram Gallery Section */}
+      <InstagramGallery />
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
@@ -417,6 +426,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Support Section */}
       <section id="support" className="py-20 px-4 sm:px-6 lg:px-8">

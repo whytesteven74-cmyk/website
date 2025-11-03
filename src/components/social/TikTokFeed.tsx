@@ -13,8 +13,9 @@ interface TikTokVideo {
   url: string;
 }
 
-// Mock data for now - replace with actual TikTok API
-const MOCK_VIDEOS: TikTokVideo[] = [
+// Replace these with your actual TikTok video IDs
+// Format: https://www.tiktok.com/@stevewhyte171/video/VIDEO_ID
+const TIKTOK_VIDEOS: TikTokVideo[] = [
   {
     id: "1",
     title: "Day 145: Crossing the Alps",
@@ -22,7 +23,7 @@ const MOCK_VIDEOS: TikTokVideo[] = [
     views: 12500,
     likes: 1843,
     comments: 234,
-    url: "https://www.tiktok.com/@stevewhyte171"
+    url: "https://www.tiktok.com/@stevewhyte171/video/7420123456789" // Replace with actual video ID
   },
   {
     id: "2", 
@@ -78,7 +79,7 @@ export default function TikTokFeed() {
   useEffect(() => {
     // Simulate API call - replace with actual TikTok API
     setTimeout(() => {
-      setVideos(MOCK_VIDEOS);
+      setVideos(TIKTOK_VIDEOS);
       setLoading(false);
     }, 1000);
   }, []);

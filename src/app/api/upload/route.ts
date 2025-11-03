@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-// This is a basic upload handler that can work with multiple storage providers
-// Uncomment the provider you want to use after installing dependencies
+import { put } from '@vercel/blob';
 
 export async function POST(request: NextRequest) {
   try {
@@ -33,15 +31,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Option 1: Vercel Blob Storage (uncomment after installing @vercel/blob)
-    /*
-    import { put } from '@vercel/blob';
-    
+    // Upload to Vercel Blob Storage
     const blob = await put(file.name, file, {
       access: 'public',
     });
     
-    // Save to database if using Neon
+    // TODO: Save to database when Neon is configured
     // await db.insert(media).values({
     //   filename: file.name,
     //   url: blob.url,
@@ -52,22 +47,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ 
       url: blob.url,
       filename: file.name,
-      size: file.size 
-    });
-    */
-
-    // Option 2: Base64 storage (for small files, temporary solution)
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const base64 = buffer.toString('base64');
-    const dataUrl = `data:${file.type};base64,${base64}`;
-    
-    return NextResponse.json({ 
-      url: dataUrl,
-      filename: file.name,
       size: file.size,
       type: file.type,
-      message: 'File uploaded (base64). For production, configure Vercel Blob or another storage provider.'
+      message: 'File uploaded successfully to Vercel Blob Storage!'
     });
 
   } catch (error) {
@@ -84,7 +66,7 @@ export async function GET() {
     message: 'Upload endpoint ready. POST a file to upload.',
     maxSize: '5MB',
     allowedTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml'],
-    storageProvider: 'base64 (temporary)',
-    recommendation: 'Configure Vercel Blob or Cloudinary for production'
+    storageProvider: 'Vercel Blob Storage',
+    status: 'Active and connected'
   });
 }

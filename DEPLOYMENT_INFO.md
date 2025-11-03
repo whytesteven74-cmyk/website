@@ -3,7 +3,7 @@
 ## 🌐 Your Live Website URLs
 
 ### Production URL
-**https://personal-website-q111ylgty-whytesteven74-1176s-projects.vercel.app**
+**https://stevenwhyte.vercel.app/** ✨ (Custom domain active!)
 
 ### Project Dashboard
 **https://vercel.com/whytesteven74-1176s-projects/personal-website**

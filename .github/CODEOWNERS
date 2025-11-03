@@ -1,0 +1,21 @@
+# Code Owners for automatic review assignment
+# These owners will be requested for review when someone opens a pull request
+
+# Global owners
+* @whytesteven74-cmyk
+
+# Frontend components
+/src/components/ @whytesteven74-cmyk
+/src/app/ @whytesteven74-cmyk
+
+# API routes
+/src/app/api/ @whytesteven74-cmyk
+
+# Configuration files
+/.github/ @whytesteven74-cmyk
+/vercel.json @whytesteven74-cmyk
+/package.json @whytesteven74-cmyk
+
+# Documentation
+/docs/ @whytesteven74-cmyk
+*.md @whytesteven74-cmyk

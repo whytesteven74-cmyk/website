@@ -1,5 +1,10 @@
 # Steven Whyte - Personal Website
 
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://stevenwhyte.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/whytesteven74-cmyk/website)
+[![CI/CD Pipeline](https://img.shields.io/github/actions/workflow/status/whytesteven74-cmyk/website/ci.yml?style=for-the-badge&label=CI/CD)](https://github.com/whytesteven74-cmyk/website/actions)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+
 A modern, responsive personal website showcasing Steven Whyte's incredible journey cycling 5000+ miles across Europe while experiencing homelessness firsthand to provide lived-experience advice on homeless services and projects.
 
 ## 🌟 New Features

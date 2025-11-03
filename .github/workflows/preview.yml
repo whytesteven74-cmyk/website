@@ -1,0 +1,27 @@
+name: Preview Deployment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy-preview:
+    name: Deploy Preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Add deployment comment
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { issue: { number: issue_number }, repo: { owner, repo } } = context;
+            const message = `🚀 Deploying to Vercel Preview...\n\nOnce deployed, your preview URL will appear in the Vercel dashboard:\nhttps://vercel.com/whytesteven74-1176s-projects/personal-website`;
+            
+            github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number,
+              body: message
+            });

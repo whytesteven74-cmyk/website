@@ -1,0 +1,64 @@
+image: node:18
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Build and Test
+          caches:
+            - node
+          script:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
+            - pnpm run build
+            - pnpm run lint
+          artifacts:
+            - .next/**
+            
+      - step:
+          name: Deploy to Vercel
+          deployment: production
+          script:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm add -g vercel
+            - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+            - vercel build --prod --token=$VERCEL_TOKEN
+            - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+            
+    develop:
+      - step:
+          name: Build and Test (Dev)
+          caches:
+            - node
+          script:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
+            - pnpm run build
+            - pnpm run lint
+            
+      - step:
+          name: Deploy Preview to Vercel
+          deployment: staging
+          script:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm add -g vercel
+            - vercel pull --yes --environment=preview --token=$VERCEL_TOKEN
+            - vercel build --token=$VERCEL_TOKEN
+            - vercel deploy --prebuilt --token=$VERCEL_TOKEN
+            
+  pull-requests:
+    '**':
+      - step:
+          name: PR Build & Test
+          caches:
+            - node
+          script:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
+            - pnpm run build
+            - pnpm run lint

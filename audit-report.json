@@ -1,0 +1,109 @@
+{
+  "performance": [
+    {
+      "type": "info",
+      "message": "No raster images found - using SVGs (good for performance)"
+    },
+    {
+      "type": "warning",
+      "message": "Consider adding lazy loading for images and heavy components"
+    }
+  ],
+  "seo": [
+    {
+      "type": "success",
+      "message": "✅ metadataBase configured"
+    },
+    {
+      "type": "success",
+      "message": "✅ Open Graph tags configured"
+    },
+    {
+      "type": "success",
+      "message": "✅ Twitter cards configured"
+    },
+    {
+      "type": "success",
+      "message": "✅ Keywords meta configured"
+    },
+    {
+      "type": "success",
+      "message": "✅ Description meta configured"
+    },
+    {
+      "type": "success",
+      "message": "✅ Sitemap configured"
+    },
+    {
+      "type": "success",
+      "message": "✅ Robots.txt configured"
+    }
+  ],
+  "accessibility": [
+    {
+      "type": "warning",
+      "message": "Missing alt attributes on images"
+    },
+    {
+      "type": "success",
+      "message": "✅ ARIA labels found"
+    },
+    {
+      "type": "success",
+      "message": "✅ Skip link present"
+    },
+    {
+      "type": "success",
+      "message": "✅ Using semantic header element"
+    },
+    {
+      "type": "success",
+      "message": "✅ Using semantic nav element"
+    },
+    {
+      "type": "success",
+      "message": "✅ Using semantic main element"
+    },
+    {
+      "type": "success",
+      "message": "✅ Using semantic footer element"
+    },
+    {
+      "type": "success",
+      "message": "✅ Using semantic section element"
+    },
+    {
+      "type": "success",
+      "message": "✅ Using semantic article element"
+    }
+  ],
+  "usability": [
+    {
+      "type": "success",
+      "message": "✅ Loading states implemented"
+    },
+    {
+      "type": "success",
+      "message": "✅ Error handling present"
+    },
+    {
+      "type": "success",
+      "message": "✅ Custom 404 page exists"
+    },
+    {
+      "type": "success",
+      "message": "✅ Responsive design implemented"
+    }
+  ],
+  "security": [
+    {
+      "type": "success",
+      "message": "✅ .env.example file present for configuration"
+    },
+    {
+      "type": "success",
+      "message": "✅ Security headers configured"
+    }
+  ],
+  "codeQuality": []
+}
